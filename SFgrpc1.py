@@ -1,6 +1,6 @@
 import jwt
 import os
-os.environ["GRPC_VERBOSITY"] = "NONE"
+os.environ["GRPC_VERBOSITY"] = "NONE" #annoying cython warnings go awayyyyy
 os.environ["GRPC_ENABLE_FORK_SUPPORT"] = "false"
 import grpc
 import os, time, requests, threading, io
