@@ -5,9 +5,9 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/python-3.9%2B-blue" alt="Python 3.9+">
-  <img src="https://img.shields.io/badge/Claude-sonnet--4--6-8A2BE2" alt="Claude Sonnet 4.6">
-  <img src="https://img.shields.io/badge/Salesforce-Pub%2FSub%20API-00A1E0" alt="Salesforce Pub/Sub API">
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.9%2B-blue" alt="Python 3.9+"></a>
+  <a href="https://docs.claude.com/en/docs/about-claude/models"><img src="https://img.shields.io/badge/Claude-sonnet--4--6-8A2BE2" alt="Claude Sonnet 4.6"></a>
+  <a href="https://developer.salesforce.com/docs/platform/pub-sub-api/overview"><img src="https://img.shields.io/badge/Salesforce-Pub%2FSub%20API-00A1E0" alt="Salesforce Pub/Sub API"></a>
 </p>
 
 ## 📺 Demo
