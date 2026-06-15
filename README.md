@@ -20,7 +20,7 @@
 
 ## How it works
 
-1. Authenticates to Salesforce via the JWT Bearer OAuth flow.
+1. Authenticates to Salesforce via the JWT Bearer OAuth flow.(you need to upload your certificate to External Client App)
 2. Opens a gRPC stream to the Salesforce Pub/Sub API and subscribes to `/data/AccountChangeEvent`.
 3. Decodes each Avro-encoded payload (schemas cached per `schema_id`).
 4. Sends the decoded event to Claude (`claude-sonnet-4-6`) with a stadium-announcer prompt.
@@ -39,7 +39,7 @@ curl -O https://raw.githubusercontent.com/developerforce/pub-sub-api/main/pubsub
 python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. pubsub_api.proto
 ```
 
-Set environment variables:
+Set environment variables(on Mac, in ~/.zshrc):
 
 | Variable | Description |
 |---|---|
@@ -61,11 +61,6 @@ Then create, update, or delete an Account record. The announcement appears withi
 ## Configuration
 
 - **Topic** — hardcoded to `/data/AccountChangeEvent`. Change to any CDC channel or Platform Event topic.
-- **Replay preset** — `LATEST` (only new events). Switch to `EARLIEST` in `fetch_req_stream` for backlog.
 - **Throughput** — one event at a time via a `Semaphore(1)`. Bump both the semaphore count and `num_requested` to parallelize.
 
-## Common issues
 
-- `invalid_grant: user hasn't approved this consumer` → pre-authorize the user on the Connected App.
-- `invalid_grant: invalid assertion` → private key doesn't match the uploaded cert, or wrong `aud` (use `https://test.salesforce.com` for sandboxes).
-- No events arriving → confirm CDC is enabled for `Account` in Setup.
