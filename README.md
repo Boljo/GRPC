@@ -53,7 +53,7 @@ Prereqs in Salesforce: a Connected App configured for JWT Bearer, and Change Dat
 ## Run
 
 ```bash
-python salesforce_live.py
+python SFgrpc1.py
 ```
 
 Then create, update, or delete an Account record. The announcement appears within a couple of seconds.
