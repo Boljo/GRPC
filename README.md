@@ -1,4 +1,4 @@
-<h1 align="center">🎸 Salesforce Live</h1>
+<h1 align="center">🎸 Salesforce Event STREAMS</h1>
 
 <p align="center">
   Stream Salesforce Change Data Capture events in real time and have Claude announce each one like a rock & roll stadium MC.
