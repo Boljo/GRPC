@@ -1,8 +1,8 @@
 import jwt
 import grpc
 import os, time,requests, threading, io
-import pubsub_api_pb2 as pb2
-import pubsub_api_pb2_grpc as pb2_grpc
+from sfprotostash import pubsub_api_pb2 as pb2
+from sfprotostash import pubsub_api_pb2_grpc as pb2_grpc
 import avro.schema
 import avro.io
 import certifi
